@@ -14,7 +14,7 @@ In modern web development, it is crucial to ensure that websites are both access
 
 ## How to Use
 
-1. Visit the application at [AltHead Checker](https://alt-head-checker-app.vercel.app/).
+1. Visit the application at [AltHead Checker](https://alt-head-checker-app.vercel.app/index.html).
 2. Enter the URL of the webpage you want to analyze.
 3. Review the results for missing or incorrect `alt` attributes and heading structure issues.
 4. Apply the recommendations provided to improve accessibility and SEO.
