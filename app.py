@@ -6,7 +6,8 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from urllib.parse import urljoin
-
+from flask import send_file
+import os
 
 app = Flask(__name__,
             static_url_path='/', 
@@ -47,7 +48,11 @@ def generate_pdf(headings, url):
     buffer.seek(0)
     return buffer
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def home():
+    return send_file(os.path.join(app.static_folder, 'index.html'))
+
+@app.route('/headings', methods=['GET', 'POST'])
 def index():
     headings = []
     alt_attributes = []
@@ -58,7 +63,7 @@ def index():
         soup = BeautifulSoup(response.content, 'html.parser')
         headings = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
     
-    return render_template('index.html', headings=headings, url=url, alt_attributes=alt_attributes)
+    return render_template('headings.html', headings=headings, url=url, alt_attributes=alt_attributes)
 
 @app.route('/check_alt', methods=['GET'])
 def check_alt_page():

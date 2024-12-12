@@ -295,8 +295,8 @@ tr:hover {
       <div class="navbar">
         <img src="{{ url_for('static', filename='logo1.png') }}" class="logo" alt="Logo">
         <ul>
-          <li><a href="/index.html">Home</a></li> <!-- Perbaikan path menuju index.html -->
-          <li><a href="index.html">Headings Checker</a></li>
+          <li><a href="/">Home</a></li> <!-- Perbaikan path menuju index.html -->
+          <li><a href="headings.html">Headings Checker</a></li>
           <li><a href="/check_alt">Img Alt Tag Checker</a></li> <!-- Perbaikan path menuju alttag.html -->
     
         </ul>
@@ -305,7 +305,7 @@ tr:hover {
             <form method="POST">
                 <label for="url">Enter URL:</label>
                 <input type="text" id="url" name="url" required>
-                <button type="submit" formaction="/"><span></span>Check Headings</button>
+                <button type="submit" formaction="/headings"><span></span>Check Headings</button>
             </form>
             
             {% if headings %}
